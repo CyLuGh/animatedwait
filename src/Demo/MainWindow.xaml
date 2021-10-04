@@ -1,0 +1,26 @@
+﻿<Window x:Class="Demo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Demo"
+        xmlns:animatedwait="clr-namespace:AnimatedWait;assembly=AnimatedWait"
+        mc:Ignorable="d"
+        Title="MainWindow"
+        Height="450"
+        Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Hourglass">
+                <animatedwait:HourglassIndeterminateProgress StrokeUpper="IndianRed"
+                                                             StrokeLower="OrangeRed" />
+            </TabItem>
+            <TabItem Header="Circular">
+                <animatedwait:CircularWorkIndicator FirstBrush="LawnGreen" SecondBrush="Green" ThirdBrush="Aquamarine" FourthBrush="DarkOliveGreen" />
+            </TabItem>
+            <TabItem Header="Process">
+                <animatedwait:ProcessingIndeterminateProgress />
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

@@ -1,0 +1,488 @@
+<UserControl x:Class="AnimatedWait.HalfHourglassIndeterminateProgress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AnimatedWait"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox Stretch="Fill"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch">
+        <Canvas Height="300"
+                Width="300">
+            <Path Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round"
+                  StrokeThickness="8">
+                <Path.Data>
+                    <PathGeometry>
+                        <PathFigure StartPoint="0,150">
+                            <ArcSegment x:Name="Arc"
+                                        SweepDirection="Clockwise"
+                                        Size="150,150"
+                                        Point="0,150" />
+
+                        </PathFigure>
+                    </PathGeometry>
+                </Path.Data>
+
+                <Path.RenderTransform>
+                    <RotateTransform x:Name="ArcRotate"
+                                     CenterX="150"
+                                     CenterY="150" />
+                </Path.RenderTransform>
+            </Path>
+
+            <Path x:Name="Path1"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo1"
+                                  StartPoint="100,50"
+                                  EndPoint="200,50" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path2"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo2"
+                                  StartPoint="200,50"
+                                  EndPoint="200,90" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path3"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo3"
+                                  StartPoint="200,90"
+                                  EndPoint="120,210" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path4"
+                  Opacity="0"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo4"
+                                  StartPoint="120,210"
+                                  EndPoint="120,230" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path5"
+                  Opacity="0"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo5"
+                                  StartPoint="120,230"
+                                  EndPoint="180,230" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path6"
+                  Opacity="0"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo6"
+                                  StartPoint="180,230"
+                                  EndPoint="180,210" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path7"
+                  Opacity="0"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo7"
+                                  StartPoint="180,210"
+                                  EndPoint="100,90" />
+                </Path.Data>
+            </Path>
+
+            <Path x:Name="Path8"
+                  Opacity="0"
+                  Stroke="{Binding Path=Stroke,RelativeSource={RelativeSource AncestorType=local:HalfHourglassIndeterminateProgress}}"
+                  StrokeThickness="8"
+                  StrokeStartLineCap="Round"
+                  StrokeEndLineCap="Round">
+                <Path.Data>
+                    <LineGeometry x:Name="Geo8"
+                                  StartPoint="100,90"
+                                  EndPoint="100,50" />
+                </Path.Data>
+            </Path>
+
+            <Canvas.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard x:Name="AnimationStoryboard"
+                                     HandoffBehavior="Compose">
+                        <Storyboard DesiredFrameRate="30"
+                                    RepeatBehavior="Forever">
+                            <PointAnimation Storyboard.TargetName="Geo1"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="100,50"
+                                            To="200,50"
+                                            BeginTime="0:0:0"
+                                            Duration="0:0:0.4" />
+                            <PointAnimation Storyboard.TargetName="Geo1"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="200,50"
+                                            To="100,50"
+                                            BeginTime="0:0:0.4"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo2"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="200,50"
+                                            To="200,90"
+                                            BeginTime="0:0:0.4"
+                                            Duration="0:0:0.2" />
+                            <PointAnimation Storyboard.TargetName="Geo2"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="200,90"
+                                            To="200,50"
+                                            BeginTime="0:0:0.6"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo3"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="200,90"
+                                            To="120,210"
+                                            BeginTime="0:0:0.6"
+                                            Duration="0:0:0.5" />
+                            <PointAnimation Storyboard.TargetName="Geo3"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="120,210"
+                                            To="200,90"
+                                            BeginTime="0:0:1.1"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo4"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="120,210"
+                                            To="120,230"
+                                            BeginTime="0:0:1.1"
+                                            Duration="0:0:0.1" />
+                            <PointAnimation Storyboard.TargetName="Geo4"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="120,230"
+                                            To="120,210"
+                                            BeginTime="0:0:1.2"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo5"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="120,230"
+                                            To="180,230"
+                                            BeginTime="0:0:1.2"
+                                            Duration="0:0:0.3" />
+                            <PointAnimation Storyboard.TargetName="Geo5"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="180,230"
+                                            To="120,230"
+                                            BeginTime="0:0:1.5"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo6"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="180,230"
+                                            To="180,210"
+                                            BeginTime="0:0:1.5"
+                                            Duration="0:0:0.1" />
+                            <PointAnimation Storyboard.TargetName="Geo6"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="180,210"
+                                            To="180,230"
+                                            BeginTime="0:0:1.6"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo7"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="180,210"
+                                            To="100,90"
+                                            BeginTime="0:0:1.6"
+                                            Duration="0:0:0.5" />
+                            <PointAnimation Storyboard.TargetName="Geo7"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="100,90"
+                                            To="180,210"
+                                            BeginTime="0:0:2.1"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo8"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="100,90"
+                                            To="100,50"
+                                            BeginTime="0:0:2.1"
+                                            Duration="0:0:.2" />
+                            <PointAnimation Storyboard.TargetName="Geo8"
+                                            Storyboard.TargetProperty="StartPoint"
+                                            From="100,50"
+                                            To="100,90"
+                                            BeginTime="0:0:2.3"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo4"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="120,210"
+                                            To="120,230"
+                                            BeginTime="0:0:0"
+                                            Duration="0:0:0.1" />
+                            <PointAnimation Storyboard.TargetName="Geo4"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="120,230"
+                                            To="120,210"
+                                            BeginTime="0:0:1.2"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo5"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="120,230"
+                                            To="180,230"
+                                            BeginTime="0:0:0.1"
+                                            Duration="0:0:0.3" />
+                            <PointAnimation Storyboard.TargetName="Geo5"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="180,230"
+                                            To="120,230"
+                                            BeginTime="0:0:1.5"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo6"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="180,230"
+                                            To="180,210"
+                                            BeginTime="0:0:0.4"
+                                            Duration="0:0:0.1" />
+                            <PointAnimation Storyboard.TargetName="Geo6"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="180,210"
+                                            To="180,230"
+                                            BeginTime="0:0:1.6"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo7"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="180,210"
+                                            To="100,90"
+                                            BeginTime="0:0:0.5"
+                                            Duration="0:0:0.5" />
+                            <PointAnimation Storyboard.TargetName="Geo7"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="100,90"
+                                            To="180,210"
+                                            BeginTime="0:0:2.1"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo8"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="100,90"
+                                            To="100,50"
+                                            BeginTime="0:0:1"
+                                            Duration="0:0:0.2" />
+                            <PointAnimation Storyboard.TargetName="Geo8"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="100,50"
+                                            To="100,90"
+                                            BeginTime="0:0:2.3"
+                                            Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path4"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:0"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path4"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:1.2"
+                                             Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path5"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:0.1"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path5"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:1.5"
+                                             Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path6"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:0.4"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path6"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:1.6"
+                                             Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path7"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:0.5"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path7"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:2.1"
+                                             Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path8"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:1"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path8"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:2.3"
+                                             Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo1"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="100,50"
+                                            To="200,50"
+                                            BeginTime="0:0:1.2"
+                                            Duration="0:0:0.4" />
+
+                            <PointAnimation Storyboard.TargetName="Geo1"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="200,50"
+                                            To="100,50"
+                                            BeginTime="0:0:2.3"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo2"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="200,50"
+                                            To="200,90"
+                                            BeginTime="0:0:1.6"
+                                            Duration="0:0:0.2" />
+                            <PointAnimation Storyboard.TargetName="Geo2"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="200,90"
+                                            To="200,50"
+                                            BeginTime="0:0:2.3"
+                                            Duration="0" />
+
+                            <PointAnimation Storyboard.TargetName="Geo3"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="200,90"
+                                            To="120,210"
+                                            BeginTime="0:0:1.8"
+                                            Duration="0:0:0.5" />
+                            <PointAnimation Storyboard.TargetName="Geo3"
+                                            Storyboard.TargetProperty="EndPoint"
+                                            From="120,210"
+                                            To="200,90"
+                                            BeginTime="0:0:2.3"
+                                            Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path1"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:0.4"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path1"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:1.2"
+                                             Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path2"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:0.6"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path2"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:1.6"
+                                             Duration="0" />
+
+                            <DoubleAnimation Storyboard.TargetName="Path3"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             BeginTime="0:0:1.1"
+                                             Duration="0" />
+                            <DoubleAnimation Storyboard.TargetName="Path3"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="0"
+                                             To="1"
+                                             BeginTime="0:0:1.8"
+                                             Duration="0" />
+
+                            <PointAnimationUsingPath Storyboard.TargetName="Arc"
+                                                     Storyboard.TargetProperty="Point"
+                                                     BeginTime="00:00:00"
+                                                     Duration="00:00:01.15"
+                                                     AutoReverse="True">
+                                <PointAnimationUsingPath.PathGeometry>
+                                    <PathGeometry>
+                                        <PathFigure StartPoint="0,150">
+                                            <ArcSegment SweepDirection="Clockwise"
+                                                        Size="150,150"
+                                                        Point="300,150" />
+                                        </PathFigure>
+                                    </PathGeometry>
+                                </PointAnimationUsingPath.PathGeometry>
+                            </PointAnimationUsingPath>
+
+                            <DoubleAnimation Storyboard.TargetName="ArcRotate"
+                                             Storyboard.TargetProperty="Angle"
+                                             From="00"
+                                             To="359"
+                                             Duration="0:0:2.3" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Canvas.Unloaded">
+                    <StopStoryboard BeginStoryboardName="AnimationStoryboard" />
+                </EventTrigger>
+            </Canvas.Triggers>
+        </Canvas>
+    </Viewbox>
+</UserControl>

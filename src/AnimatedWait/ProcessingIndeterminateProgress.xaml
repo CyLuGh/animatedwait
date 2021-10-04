@@ -1,0 +1,2580 @@
+﻿<UserControl x:Class="AnimatedWait.ProcessingIndeterminateProgress"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AnimatedWait"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Viewbox>
+        <Canvas Width="600"
+                Height="500">
+            <Canvas x:Name="FileInput">
+                <Path Stroke="{Binding Path=InputBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=InputBackground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 35,297 a 2,2 0 0 1 -2,-2 l 0,-40 l 10,-10 l 25,0 a 2,2 0 0 1 2,2 l 0,48 a 2,2 0 0 1 -2,2 z" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=InputBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=InputBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 33,255 l 8,0 a 2,2 0 0 0 2,-2 l 0,-8" />
+                    </Path.Data>
+                </Path>
+                <TextBlock Text="!?#$"
+                           FontSize="12"
+                           Canvas.Top="260"
+                           Canvas.Left="40"
+                           Foreground="{Binding Path=InputBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                           FontWeight="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}" />
+                <Path Stroke="{Binding Path=InputBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry Figures="M 40,280 l 18,0 M 40,285 l 9,0" />
+                    </Path.Data>
+                </Path>
+
+                <Canvas.RenderTransform>
+                    <TranslateTransform x:Name="TranslateFileInput" />
+                </Canvas.RenderTransform>
+            </Canvas>
+
+            <Canvas x:Name="AbacusOutput">
+                <Path Stroke="{Binding Path=AbacusBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusBackground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 430,297 a 2,2 0 0 1 -2,-2 l 0,-40 a 2,2 0 0 1 2,-2 l 50,0 a 2,2 0 0 1 2,2 l 0,40 a 2,2 0 0 1 -2,2 z" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=AbacusBorderBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry Figures="M 430,290 l 50,0 M 430,280 l 50,0 M 430,270 l 50,0 M 430,260 l 50,0" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="435,290"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry x:Name="AbacusBottomEllipse3"
+                                         Center="440,290"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry x:Name="AbacusBottomEllipse2"
+                                         Center="445,290"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry x:Name="AbacusBottomEllipse1"
+                                         Center="450,290"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="435,280"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="440,280"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry x:Name="AbacusMiddleBottomEllipse2"
+                                         Center="445,280"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry  x:Name="AbacusMiddleBottomEllipse1"
+                                          Center="450,280"
+                                          RadiusX="2"
+                                          RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="435,270"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="440,270"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="445,270"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="450,270"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="435,260"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="440,260"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="445,260"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AbacusForeground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry x:Name="AbacusTopEllipse"
+                                         Center="450,260"
+                                         RadiusX="2"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Canvas.RenderTransform>
+                    <TranslateTransform x:Name="TranslateAbacusOuput"
+                                        X="-75" />
+                </Canvas.RenderTransform>
+            </Canvas>
+
+            <Canvas x:Name="RedLamp"
+                    Opacity="0">
+                <Path Stroke="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 372,145 L 372,135 A 6,7 0 0 1 383,135 L 383,145 Z " />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure x:Name="RedLampFigure1"
+                                        StartPoint="377.5,128">
+                                <LineSegment x:Name="RedLampSegment1"
+                                             Point="377.5,123" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure x:Name="RedLampFigure2"
+                                        StartPoint="377.5,128">
+                                <LineSegment x:Name="RedLampSegment2"
+                                             Point="377.5,123" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="30"
+                                         CenterX="377.5"
+                                         CenterY="140" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <Path Stroke="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure x:Name="RedLampFigure3"
+                                        StartPoint="377.5,128">
+                                <LineSegment x:Name="RedLampSegment3"
+                                             Point="377.5,123" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="60"
+                                         CenterX="377.5"
+                                         CenterY="140" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <Path Stroke="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure x:Name="RedLampFigure4"
+                                        StartPoint="377.5,128">
+                                <LineSegment x:Name="RedLampSegment4"
+                                             Point="377.5,123" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="-30"
+                                         CenterX="377.5"
+                                         CenterY="140" />
+                    </Path.RenderTransform>
+                </Path>
+
+                <Path Stroke="{Binding Path=AlertBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure x:Name="RedLampFigure5"
+                                        StartPoint="377.5,128">
+                                <LineSegment x:Name="RedLampSegment5"
+                                             Point="377.5,123" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                    <Path.RenderTransform>
+                        <RotateTransform Angle="-60"
+                                         CenterX="377.5"
+                                         CenterY="140" />
+                    </Path.RenderTransform>
+                </Path>
+            </Canvas>
+
+            <Canvas x:Name="LeftRamp">
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 190,180 A 10,10 0 0 0 180,190 L 180,300 L 190,300 Z" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="190,180"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="190,300" />
+                                <LineSegment Point="180,300" />
+                                <LineSegment Point="180,298" />
+                                <LineSegment Point="188,298" />
+                                <LineSegment Point="188,180" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M25,300 L190,300 L190,330 L25,330 A 15,15 0 0 1 25,300 Z" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="40,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="90,330,10,45" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="140,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="25,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="75,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="125,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="175,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="40,330"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="50,330" />
+                                <LineSegment Point="50,332" />
+                                <LineSegment Point="42,332" />
+                                <LineSegment Point="42,375" />
+                                <LineSegment Point="40,375" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="90,330"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="100,330" />
+                                <LineSegment Point="100,332" />
+                                <LineSegment Point="92,332" />
+                                <LineSegment Point="92,375" />
+                                <LineSegment Point="90,375" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="140,330"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="150,330" />
+                                <LineSegment Point="150,332" />
+                                <LineSegment Point="142,332" />
+                                <LineSegment Point="142,375" />
+                                <LineSegment Point="140,375" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="40,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="90,330,10,45" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="140,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 190,180 A 10,10 0 0 0 180,190 L 180,300 L 190,300 Z" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+
+            <Canvas x:Name="RightRamp">
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 190,180 A 10,10 0 0 0 180,190 L 180,300 L 190,300 Z" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="190,180"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="190,300" />
+                                <LineSegment Point="180,300" />
+                                <LineSegment Point="180,298" />
+                                <LineSegment Point="188,298" />
+                                <LineSegment Point="188,180" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M25,300 L190,300 L190,330 L25,330 A 15,15 0 0 1 25,300 Z" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="40,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="90,330,10,45" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="140,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="25,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="75,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="125,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="175,315"
+                                         RadiusX="8"
+                                         RadiusY="8" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="40,330"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="50,330" />
+                                <LineSegment Point="50,332" />
+                                <LineSegment Point="42,332" />
+                                <LineSegment Point="42,375" />
+                                <LineSegment Point="40,375" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="90,330"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="100,330" />
+                                <LineSegment Point="100,332" />
+                                <LineSegment Point="92,332" />
+                                <LineSegment Point="92,375" />
+                                <LineSegment Point="90,375" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="140,330"
+                                        IsClosed="True"
+                                        IsFilled="True">
+                                <LineSegment Point="150,330" />
+                                <LineSegment Point="150,332" />
+                                <LineSegment Point="142,332" />
+                                <LineSegment Point="142,375" />
+                                <LineSegment Point="140,375" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="40,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="90,330,10,45" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="140,330,10,45" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M 190,180 A 10,10 0 0 0 180,190 L 180,300 L 190,300 Z" />
+                    </Path.Data>
+                </Path>
+
+                <Canvas.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="-1"
+                                        CenterX="190" />
+                        <TranslateTransform X="210" />
+                    </TransformGroup>
+                </Canvas.RenderTransform>
+            </Canvas>
+
+            <Canvas x:Name="CentralMachine">
+                <Path Stroke="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry Figures="M200,150 L195,150 A 5,5 0 0 0 190,155 L190,345 A 5,5 0 0 0 195,350 L215,350 L215,360 L195,360 A 10,10 0 0 0 185,370 L185,375 L405,375 L405,370 A 10,10 0 0 0 395,360 L375,360 l0,-10 L395,350 A 5,5 0 0 0 400,345 L400,155 A 5,5 0 0 0 395,150 L305,150 A 10,8 0 0 0 285,150 L220,150 L220,115 A 2,2 0 0 0 220,110 L200,110 A 2,2 0 0 0 200,115 Z" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      Fill="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <RectangleGeometry Rect="215,350,160,2" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="235,220">
+                                <ArcSegment Point="229,226"
+                                            Size="6,6" />
+                                <LineSegment Point="229,315" />
+                                <ArcSegment  Point="235,321"
+                                             Size="6,6" />
+
+                                <LineSegment Point="350,321" />
+                                <ArcSegment Point="355,315"
+                                            Size="6,6" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="331,190,18,1" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Opacity=".3"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="199,150">
+                                <LineSegment Point="199,170" />
+                                <ArcSegment Point="209,181"
+                                            Size="11,11" />
+                                <LineSegment Point="229,181" />
+                                <ArcSegment Point="240,170"
+                                            Size="11,11" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry FillRule="Nonzero">
+                            <PathFigure StartPoint="200,150">
+                                <LineSegment Point="195,150" />
+                                <ArcSegment Point="190,155"
+                                            Size="5,5" />
+                                <LineSegment Point="190,345" />
+                                <ArcSegment Point="195,350"
+                                            Size="5,5" />
+                                <LineSegment Point="395,350" />
+                                <ArcSegment Point="400,345"
+                                            Size="5,5" />
+                                <LineSegment Point="400,155" />
+                                <ArcSegment Point="395,150"
+                                            Size="5,5" />
+                                <LineSegment Point="220,150" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="215,350">
+                                <LineSegment Point="215,360" />
+                                <LineSegment Point="375,360" />
+                                <LineSegment Point="375,350" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="215,360"
+                                        IsClosed="True">
+                                <LineSegment Point="195,360" />
+                                <ArcSegment Point="185,370"
+                                            Size="10,10" />
+                                <LineSegment Point="185,375" />
+                                <LineSegment Point="405,375" />
+                                <LineSegment Point="405,370" />
+                                <ArcSegment Point="395,360"
+                                            Size="10,10" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="235,220"
+                                        IsClosed="True">
+                                <ArcSegment Point="230,225"
+                                            Size="5,5" />
+                                <LineSegment Point="230,315" />
+                                <ArcSegment Point="235,320"
+                                            Size="5,5" />
+                                <LineSegment Point="350,320" />
+                                <ArcSegment Point="355,315"
+                                            Size="5,5" />
+                                <LineSegment Point="355,225" />
+                                <ArcSegment Point="350,220"
+                                            Size="5,5" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="240,230">
+                                <LineSegment Point="260,230" />
+                            </PathFigure>
+                            <PathFigure StartPoint="240,235">
+                                <LineSegment Point="250,235" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="330,190"
+                                        IsClosed="True">
+                                <LineSegment Point="350,190" />
+                                <ArcSegment Point="330,190"
+                                            IsLargeArc="True"
+                                            Size="12,10" />
+                            </PathFigure>
+
+                            <PathFigure  StartPoint="200,115"
+                                         IsClosed="True">
+                                <LineSegment Point="200,170" />
+                                <ArcSegment Point="210,180"
+                                            Size="10,10" />
+                                <LineSegment Point="230,180" />
+                                <ArcSegment Point="230,160"
+                                            Size="10,10" />
+                                <LineSegment Point="220,160" />
+                                <LineSegment Point="220,115" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="200,115">
+                                <ArcSegment Point="200,110"
+                                            Size="2,2"
+                                            SweepDirection="Clockwise" />
+                                <LineSegment Point="220,110" />
+                                <ArcSegment Point="220,115"
+                                            Size="2,2"
+                                            SweepDirection="Clockwise" />
+                            </PathFigure>
+
+                            <PathFigure StartPoint="285,150">
+                                <ArcSegment Point="305,150"
+                                            Size="10,8"
+                                            SweepDirection="Clockwise" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="210,290"
+                                         RadiusX="7"
+                                         RadiusY="7" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="210,250"
+                                         RadiusX="7"
+                                         RadiusY="7" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="210,250"
+                                      EndPoint="215,245" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="210,290"
+                                      EndPoint="215,295" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="340,190"
+                                      EndPoint="347,183" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="382,265"
+                                      EndPoint="382,275" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="377,260"
+                                      EndPoint="377,280" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="372,265"
+                                      EndPoint="372,275" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="265,100"
+                                         RadiusX="4"
+                                         RadiusY="4" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <EllipseGeometry Center="325,100"
+                                         RadiusX="4"
+                                         RadiusY="4" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="267,103"
+                                      EndPoint="290,143" />
+                    </Path.Data>
+                </Path>
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <LineGeometry StartPoint="323,103"
+                                      EndPoint="300,143" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=Background,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <RectangleGeometry Rect="370,145,15,5" />
+                    </Path.Data>
+                </Path>
+
+                <Path Stroke="{Binding Path=Foreground,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure StartPoint="372,145">
+                                <LineSegment Point="372,135" />
+                                <ArcSegment Point="383,135"
+                                            Size="6,7"
+                                            SweepDirection="Clockwise" />
+                                <LineSegment Point="383,145" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+
+            </Canvas>
+
+            <Canvas x:Name="CentralProcessing">
+                <Path x:Name="Node1"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="250,250"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node2"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="255,290"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node3"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="265,270"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node4"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="275,245"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node5"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="275,300"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node6"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="285,280"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node7"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="294,232"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node8"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="296,257"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node9"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="314,237"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node10"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="309,272"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node11"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="302,297"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node12"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="327,256"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node13"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="322,305"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="Node14"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <EllipseGeometry Center="334,281"
+                                         RadiusX="3"
+                                         RadiusY="3" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="LineN1N3"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN1N3"
+                                      StartPoint="250,250"
+                                      EndPoint="250,250" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN2N3"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN2N3"
+                                      StartPoint="255,290"
+                                      EndPoint="255,290" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN2N5"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN2N5"
+                                      StartPoint="255,290"
+                                      EndPoint="275,300" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN3N6"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN3N6"
+                                      StartPoint="265,270"
+                                      EndPoint="265,270" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN3N4"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN3N4"
+                                      StartPoint="265,270"
+                                      EndPoint="265,270" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN5N6"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN5N6"
+                                      StartPoint="275,300"
+                                      EndPoint="275,300" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN4N7"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN4N7"
+                                      StartPoint="275,245"
+                                      EndPoint="275,245" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN4N8"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN4N8"
+                                      StartPoint="275,245"
+                                      EndPoint="275,245" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN6N8"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN6N8"
+                                      StartPoint="285,280"
+                                      EndPoint="285,280" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN6N11"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN6N11"
+                                      StartPoint="285,280"
+                                      EndPoint="285,280" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN7N9"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN7N9"
+                                      StartPoint="294,232"
+                                      EndPoint="294,232" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN8N9"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN8N9"
+                                      StartPoint="296,257"
+                                      EndPoint="296,257" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN8N10"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN8N10"
+                                      StartPoint="296,257"
+                                      EndPoint="296,257" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="LineN11N10"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN11N10"
+                                      StartPoint="302,297"
+                                      EndPoint="302,297" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="LineN10N12"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN10N12"
+                                      StartPoint="309,272"
+                                      EndPoint="309,272" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="LineN9N12"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN9N12"
+                                      StartPoint="314,237"
+                                      EndPoint="314,237" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="LineN11N13"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN11N13"
+                                      StartPoint="302,297"
+                                      EndPoint="302,297" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="LineN13N14"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN13N14"
+                                      StartPoint="322,305"
+                                      EndPoint="322,305" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="LineN12N14"
+                      Opacity="0"
+                      Stroke="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      Fill="{Binding Path=NodeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}">
+                    <Path.Data>
+                        <LineGeometry x:Name="SegmentN12N14"
+                                      StartPoint="327,256"
+                                      EndPoint="327,256" />
+                    </Path.Data>
+                </Path>
+
+            </Canvas>
+
+            <Canvas x:Name="Smoke">
+                <Path Stroke="{Binding Path=SmokeBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="3">
+                    <Path.Data>
+                        <PathGeometry>
+                            <PathFigure x:Name="SmokeFigure1"
+                                        StartPoint="210,105">
+                                <ArcSegment x:Name="SmokeSegment1"
+                                            Point="210,105"
+                                            Size="5,5"
+                                            SweepDirection="Clockwise" />
+                            </PathFigure>
+                            <PathFigure x:Name="SmokeFigure2"
+                                        StartPoint="215,100">
+                                <ArcSegment x:Name="SmokeSegment2"
+                                            Point="215,100"
+                                            Size="5,5" />
+                            </PathFigure>
+                            <PathFigure x:Name="SmokeFigure3"
+                                        StartPoint="215,90">
+                                <ArcSegment x:Name="SmokeSegment3"
+                                            Point="215,90"
+                                            Size="5,5"
+                                            SweepDirection="Clockwise" />
+                            </PathFigure>
+                            <PathFigure x:Name="SmokeFigure4"
+                                        StartPoint="215,80">
+                                <ArcSegment x:Name="SmokeSegment4"
+                                            Point="215,80"
+                                            Size="5,5" />
+                            </PathFigure>
+                            <PathFigure x:Name="SmokeFigure5"
+                                        StartPoint="215,70">
+                                <ArcSegment x:Name="SmokeSegment5"
+                                            Point="215,70"
+                                            Size="5,5"
+                                            SweepDirection="Clockwise" />
+                            </PathFigure>
+                            <PathFigure x:Name="SmokeFigure6"
+                                        StartPoint="215,60">
+                                <ArcSegment x:Name="SmokeSegment6"
+                                            Point="215,60"
+                                            Size="5,5" />
+                            </PathFigure>
+                        </PathGeometry>
+                    </Path.Data>
+                </Path>
+            </Canvas>
+
+            <Canvas x:Name="ZapAntenna">
+                <Path x:Name="ZapAntennaPath1"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine1"
+                                      StartPoint="265,100"
+                                      EndPoint="265,100" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="ZapAntennaPath2"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine2"
+                                      StartPoint="272,89"
+                                      EndPoint="272,89" />
+                    </Path.Data>
+                </Path>
+
+                <Path x:Name="ZapAntennaPath3"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine3"
+                                      StartPoint="278,106"
+                                      EndPoint="278,106" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath4"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine4"
+                                      StartPoint="282,84"
+                                      EndPoint="282,84" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath5"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine5"
+                                      StartPoint="288,111"
+                                      EndPoint="288,111" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath6"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine6"
+                                      StartPoint="295,89"
+                                      EndPoint="295,89" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath7"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine7"
+                                      StartPoint="301,107"
+                                      EndPoint="301,107" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath8"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine8"
+                                      StartPoint="305,82"
+                                      EndPoint="305,82" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath9"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine9"
+                                      StartPoint="310,113"
+                                      EndPoint="310,113" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath10"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine10"
+                                      StartPoint="314,89"
+                                      EndPoint="314,89" />
+                    </Path.Data>
+                </Path>
+                <Path x:Name="ZapAntennaPath11"
+                      Opacity="0"
+                      Stroke="{Binding Path=ElectricArcBrush,RelativeSource={RelativeSource AncestorType=local:ProcessingIndeterminateProgress}}"
+                      StrokeThickness="2"
+                      StrokeStartLineCap="Round"
+                      StrokeEndLineCap="Round">
+                    <Path.Data>
+                        <LineGeometry x:Name="ZapAntennaLine11"
+                                      StartPoint="318,104"
+                                      EndPoint="318,104" />
+                    </Path.Data>
+                </Path>
+            </Canvas>
+
+            <Canvas.Triggers>
+                <EventTrigger RoutedEvent="Canvas.Loaded">
+                    <BeginStoryboard x:Name="AnimationStoryboard">
+                        <Storyboard DesiredFrameRate="120"
+                                    RepeatBehavior="Forever">
+                            <DoubleAnimation Storyboard.TargetName="TranslateFileInput"
+                                             Storyboard.TargetProperty="X"
+                                             From="0"
+                                             To="150"
+                                             BeginTime="0:0:0"
+                                             Duration="0:0:3" />
+
+                            <!-- Red Lamp animations -->
+                            <Storyboard x:Name="RedLampStoryboard"
+                                        BeginTime="0:0:5.5"
+                                        RepeatBehavior="4x"
+                                        Duration="0:0:.5">
+                                <DoubleAnimation Storyboard.TargetName="RedLamp"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1" />
+                                <PointAnimation Storyboard.TargetName="RedLampFigure1"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="377.5,128"
+                                                To="377.5,120" />
+                                <PointAnimation Storyboard.TargetName="RedLampSegment1"
+                                                Storyboard.TargetProperty="Point"
+                                                From="377.5,123"
+                                                To="377.5,115" />
+                                <PointAnimation Storyboard.TargetName="RedLampFigure2"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="377.5,128"
+                                                To="377.5,120" />
+                                <PointAnimation Storyboard.TargetName="RedLampSegment2"
+                                                Storyboard.TargetProperty="Point"
+                                                From="377.5,123"
+                                                To="377.5,115" />
+                                <PointAnimation Storyboard.TargetName="RedLampFigure3"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="377.5,128"
+                                                To="377.5,120" />
+                                <PointAnimation Storyboard.TargetName="RedLampSegment3"
+                                                Storyboard.TargetProperty="Point"
+                                                From="377.5,123"
+                                                To="377.5,115" />
+                                <PointAnimation Storyboard.TargetName="RedLampFigure4"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="377.5,128"
+                                                To="377.5,120" />
+                                <PointAnimation Storyboard.TargetName="RedLampSegment4"
+                                                Storyboard.TargetProperty="Point"
+                                                From="377.5,123"
+                                                To="377.5,115" />
+                                <PointAnimation Storyboard.TargetName="RedLampFigure5"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="377.5,128"
+                                                To="377.5,120" />
+                                <PointAnimation Storyboard.TargetName="RedLampSegment5"
+                                                Storyboard.TargetProperty="Point"
+                                                From="377.5,123"
+                                                To="377.5,115" />
+
+                            </Storyboard>
+
+                            <DoubleAnimation Storyboard.TargetName="RedLamp"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0"
+                                             BeginTime="0:0:7.5"
+                                             Duration="0" />
+                            <!-- Red Lamp animations End -->
+
+                            <!-- Smoke animation -->
+                            <Storyboard x:Name="SmokeStoryboard"
+                                        BeginTime="0:0:3"
+                                        RepeatBehavior="3x">
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeSegment1"
+                                                         Storyboard.TargetProperty="Point"
+                                                         BeginTime="0:0:0"
+                                                         Duration="0:0:0.1">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M210,105 a 5,5 0 0 1 5,-5" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeFigure1"
+                                                         Storyboard.TargetProperty="StartPoint"
+                                                         BeginTime="0:0:0.3"
+                                                         Duration="0:0:0.1">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M210,105 a 5,5 0 0 1 5,-5" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeSegment2"
+                                                         Storyboard.TargetProperty="Point"
+                                                         BeginTime="0:0:0.1"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,100 a 5,5 0 0 0 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeFigure2"
+                                                         Storyboard.TargetProperty="StartPoint"
+                                                         BeginTime="0:0:0.4"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,100 a 5,5 0 0 0 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeSegment3"
+                                                         Storyboard.TargetProperty="Point"
+                                                         BeginTime="0:0:0.3"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,90 a 5,5 0 0 1 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeFigure3"
+                                                         Storyboard.TargetProperty="StartPoint"
+                                                         BeginTime="0:0:0.6"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,90 a 5,5 0 0 1 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeSegment4"
+                                                         Storyboard.TargetProperty="Point"
+                                                         BeginTime="0:0:0.5"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,80 a 5,5 0 0 0 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeFigure4"
+                                                         Storyboard.TargetProperty="StartPoint"
+                                                         BeginTime="0:0:0.8"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,80 a 5,5 0 0 0 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeSegment5"
+                                                         Storyboard.TargetProperty="Point"
+                                                         BeginTime="0:0:0.7"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,70 a 5,5 0 0 1 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeFigure5"
+                                                         Storyboard.TargetProperty="StartPoint"
+                                                         BeginTime="0:0:1"
+                                                         Duration="0:0:0.2">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,70 a 5,5 0 0 1 0,-10" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeSegment6"
+                                                         Storyboard.TargetProperty="Point"
+                                                         BeginTime="0:0:0.9"
+                                                         Duration="0:0:0.1">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,60 a 5,5 0 0 0 5,-5" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                                <PointAnimationUsingPath Storyboard.TargetName="SmokeFigure6"
+                                                         Storyboard.TargetProperty="StartPoint"
+                                                         BeginTime="0:0:1.2"
+                                                         Duration="0:0:0.1">
+                                    <PointAnimationUsingPath.PathGeometry>
+                                        <PathGeometry Figures="M215,60 a 5,5 0 0 0 5,-5" />
+                                    </PointAnimationUsingPath.PathGeometry>
+                                </PointAnimationUsingPath>
+                            </Storyboard>
+                            <!-- Smoke animation End-->
+
+                            <Storyboard x:Name="AntennaStoryboard"
+                                        BeginTime="0:0:3"
+                                        RepeatBehavior="3x"
+                                        AutoReverse="True">
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath1"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine1"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="265,100"
+                                                To="272,89"
+                                                Duration="0:0:0.05" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath2"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.05" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine2"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="272,89"
+                                                To="278,106"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.05" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.10" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine3"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="278,106"
+                                                To="282,84"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.10" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath4"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.15" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine4"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="282,84"
+                                                To="288,111"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.15" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath5"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.20" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine5"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="288,111"
+                                                To="295,89"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.20" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.25" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine6"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="295,89"
+                                                To="301,107"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.25" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath7"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.30" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine7"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="301,107"
+                                                To="305,82"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.30" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine1"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="265,100"
+                                                To="272,89"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.30" />
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath1"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.35" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.35" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine8"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="305,82"
+                                                To="310,113"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.35" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine2"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="272,89"
+                                                To="278,106"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.35" />
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath2"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.40" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.40" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine9"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="310,113"
+                                                To="314,89"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.40" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine3"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="278,106"
+                                                To="282,84"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.40" />
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.45" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.45" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine10"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="314,89"
+                                                To="318,104"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.45" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine4"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="282,84"
+                                                To="288,111"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.45" />
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath4"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.50" />
+
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath11"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.50" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine11"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="318,104"
+                                                To="325,100"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.50" />
+                                <PointAnimation Storyboard.TargetName="ZapAntennaLine5"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="288,111"
+                                                To="295,89"
+                                                Duration="0:0:0.05"
+                                                BeginTime="0:0:0.50" />
+                                <DoubleAnimation Storyboard.TargetName="ZapAntennaPath5"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.55" />
+
+                            </Storyboard>
+
+                            <DoubleAnimation Storyboard.TargetName="ZapAntennaPath1"
+                                             Storyboard.TargetProperty="Opacity"
+                                             To="0"
+                                             Duration="0"
+                                             BeginTime="0:0:6.3" />
+
+                            <DoubleAnimation Storyboard.TargetName="TranslateAbacusOuput"
+                                             Storyboard.TargetProperty="X"
+                                             From="-75"
+                                             To="75"
+                                             BeginTime="0:0:7.5"
+                                             Duration="0:0:3" />
+
+                            <Storyboard x:Name="AbacusStoryboard"
+                                        BeginTime="0:0:8"
+                                        Duration="0:0:2">
+                                <PointAnimation Storyboard.TargetName="AbacusTopEllipse"
+                                                Storyboard.TargetProperty="Center"
+                                                To="475,260" />
+
+                                <PointAnimation Storyboard.TargetName="AbacusBottomEllipse1"
+                                                Storyboard.TargetProperty="Center"
+                                                To="475,290" />
+                                <PointAnimation Storyboard.TargetName="AbacusBottomEllipse2"
+                                                Storyboard.TargetProperty="Center"
+                                                To="470,290" />
+                                <PointAnimation Storyboard.TargetName="AbacusBottomEllipse3"
+                                                Storyboard.TargetProperty="Center"
+                                                To="465,290" />
+
+                                <PointAnimation Storyboard.TargetName="AbacusMiddleBottomEllipse1"
+                                                Storyboard.TargetProperty="Center"
+                                                To="475,280" />
+                                <PointAnimation Storyboard.TargetName="AbacusMiddleBottomEllipse2"
+                                                Storyboard.TargetProperty="Center"
+                                                To="470,280" />
+                            </Storyboard>
+
+                            <Storyboard x:Name="NodesStoryboard"
+                                        AutoReverse="True"
+                                        BeginTime="0:0:3">
+                                <DoubleAnimation Storyboard.TargetName="Node1"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0:0:0"
+                                                 BeginTime="0:0:0" />
+                                <DoubleAnimation Storyboard.TargetName="Node2"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0:0:0"
+                                                 BeginTime="0:0:0" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN1N3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0" />
+                                <PointAnimation Storyboard.TargetName="SegmentN1N3"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="250,250"
+                                                To="265,270"
+                                                Duration="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN2N3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0" />
+                                <PointAnimation Storyboard.TargetName="SegmentN2N3"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="255,290"
+                                                To="265,270"
+                                                Duration="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN2N5"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0" />
+                                <PointAnimation Storyboard.TargetName="SegmentN2N5"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="255,290"
+                                                To="275,300"
+                                                Duration="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.2" />
+                                <DoubleAnimation Storyboard.TargetName="Node5"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN3N4"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN3N4"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="265,270"
+                                                To="275,245"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node4"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN3N6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN3N6"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="265,270"
+                                                To="285,280"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN5N6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN5N6"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="275,300"
+                                                To="285,280"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN4N7"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN4N7"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="275,245"
+                                                To="294,232"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node7"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN4N8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN4N8"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="275,245"
+                                                To="296,257"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN6N8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN6N8"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="285,280"
+                                                To="296,257"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN6N11"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN6N11"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="285,280"
+                                                To="302,297"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+                                <DoubleAnimation Storyboard.TargetName="Node11"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN7N9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN7N9"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="294,232"
+                                                To="314,237"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+                                <DoubleAnimation Storyboard.TargetName="LineN8N9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN8N9"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="296,257"
+                                                To="314,237"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN8N10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN8N10"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="296,257"
+                                                To="309,272"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+                                <DoubleAnimation Storyboard.TargetName="LineN11N10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN11N10"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="302,297"
+                                                To="309,272"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+                                <DoubleAnimation Storyboard.TargetName="Node10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN10N12"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <PointAnimation Storyboard.TargetName="SegmentN10N12"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="309,272"
+                                                To="327,256"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+                                <DoubleAnimation Storyboard.TargetName="LineN9N12"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <PointAnimation Storyboard.TargetName="SegmentN9N12"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="314,237"
+                                                To="327,256"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+                                <DoubleAnimation Storyboard.TargetName="Node12"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN11N13"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <PointAnimation Storyboard.TargetName="SegmentN11N13"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="302,297"
+                                                To="322,305"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+                                <DoubleAnimation Storyboard.TargetName="Node13"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN13N14"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <PointAnimation Storyboard.TargetName="SegmentN13N14"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="322,305"
+                                                To="334,281"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1" />
+                                <DoubleAnimation Storyboard.TargetName="LineN12N14"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <PointAnimation Storyboard.TargetName="SegmentN12N14"
+                                                Storyboard.TargetProperty="EndPoint"
+                                                From="327,256"
+                                                To="334,281"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node14"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="0"
+                                                 To="1"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+
+                                <!-- Hide animations -->
+
+                                <DoubleAnimation Storyboard.TargetName="Node1"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+                                <DoubleAnimation Storyboard.TargetName="Node2"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN1N3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN1N3"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="250,250"
+                                                To="265,270"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN2N3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN2N3"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="255,290"
+                                                To="265,270"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+                                <DoubleAnimation Storyboard.TargetName="LineN2N5"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN2N5"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="255,290"
+                                                To="275,300"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node3"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+                                <DoubleAnimation Storyboard.TargetName="Node5"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN3N4"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <PointAnimation Storyboard.TargetName="SegmentN3N4"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="265,270"
+                                                To="275,245"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN3N6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <PointAnimation Storyboard.TargetName="SegmentN3N6"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="265,270"
+                                                To="285,280"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN5N6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <PointAnimation Storyboard.TargetName="SegmentN5N6"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="275,300"
+                                                To="285,280"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.6" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node4"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+                                <DoubleAnimation Storyboard.TargetName="Node6"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN4N7"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <PointAnimation Storyboard.TargetName="SegmentN4N7"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="275,245"
+                                                To="294,232"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN4N8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <PointAnimation Storyboard.TargetName="SegmentN4N8"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="275,245"
+                                                To="296,257"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN6N8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <PointAnimation Storyboard.TargetName="SegmentN6N8"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="285,280"
+                                                To="296,257"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN6N11"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <PointAnimation Storyboard.TargetName="SegmentN6N11"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="285,280"
+                                                To="302,297"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:0.8" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node7"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node8"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+                                <DoubleAnimation Storyboard.TargetName="Node11"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN7N9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN7N9"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="294,232"
+                                                To="314,237"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1" />
+                                <DoubleAnimation Storyboard.TargetName="LineN8N9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN8N9"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="296,257"
+                                                To="314,237"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN8N10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN8N10"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="296,257"
+                                                To="309,272"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1" />
+                                <DoubleAnimation Storyboard.TargetName="LineN11N10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+                                <PointAnimation Storyboard.TargetName="SegmentN11N10"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="302,297"
+                                                To="309,272"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node9"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+                                <DoubleAnimation Storyboard.TargetName="Node10"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN10N12"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN10N12"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="309,272"
+                                                To="327,256"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1.2" />
+                                <DoubleAnimation Storyboard.TargetName="LineN9N12"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN9N12"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="314,237"
+                                                To="327,256"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node12"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN11N13"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.4" />
+                                <PointAnimation Storyboard.TargetName="SegmentN11N13"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="302,297"
+                                                To="322,305"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1.2" />
+
+                                <DoubleAnimation Storyboard.TargetName="Node13"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.4" />
+
+                                <DoubleAnimation Storyboard.TargetName="LineN13N14"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN13N14"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="322,305"
+                                                To="334,281"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1.4" />
+                                <DoubleAnimation Storyboard.TargetName="LineN12N14"
+                                                 Storyboard.TargetProperty="Opacity"
+                                                 From="1"
+                                                 To="0"
+                                                 Duration="0"
+                                                 BeginTime="0:0:1.6" />
+                                <PointAnimation Storyboard.TargetName="SegmentN12N14"
+                                                Storyboard.TargetProperty="StartPoint"
+                                                From="327,256"
+                                                To="334,281"
+                                                Duration="0:0:0.2"
+                                                BeginTime="0:0:1.4" />
+
+                            </Storyboard>
+
+                            <DoubleAnimation Storyboard.TargetName="Node1"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             Duration="0:0:0"
+                                             BeginTime="0:0:6.2" />
+                            <DoubleAnimation Storyboard.TargetName="Node2"
+                                             Storyboard.TargetProperty="Opacity"
+                                             From="1"
+                                             To="0"
+                                             Duration="0:0:0"
+                                             BeginTime="0:0:6.2" />
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="Canvas.Unloaded">
+                    <StopStoryboard BeginStoryboardName="AnimationStoryboard" />
+                </EventTrigger>
+            </Canvas.Triggers>
+        </Canvas>
+    </Viewbox>
+</UserControl>

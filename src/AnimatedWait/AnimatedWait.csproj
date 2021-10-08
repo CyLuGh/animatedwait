@@ -5,4 +5,13 @@
     <UseWPF>true</UseWPF>
   </PropertyGroup>
 
+  <PropertyGroup>
+		<PackageOutputPath>./nupkg</PackageOutputPath>
+
+		<Authors>Demortier Jeremy</Authors>
+		<Description>Animated components to entertain waiting people</Description>
+		<Version>0.1</Version>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
+	</PropertyGroup>
+
 </Project>

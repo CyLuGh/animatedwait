@@ -16,10 +16,16 @@
                                                              StrokeLower="OrangeRed" />
             </TabItem>
             <TabItem Header="Circular">
-                <animatedwait:CircularWorkIndicator FirstBrush="LawnGreen" SecondBrush="Green" ThirdBrush="Aquamarine" FourthBrush="DarkOliveGreen" />
+                <animatedwait:CircularWorkIndicator FirstBrush="LawnGreen"
+                                                    SecondBrush="Green"
+                                                    ThirdBrush="Aquamarine"
+                                                    FourthBrush="DarkOliveGreen" />
             </TabItem>
             <TabItem Header="Process">
                 <animatedwait:ProcessingIndeterminateProgress />
+            </TabItem>
+            <TabItem Header="Document">
+                <animatedwait:DocumentGeneration />
             </TabItem>
         </TabControl>
     </Grid>

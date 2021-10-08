@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="ReactiveUI.Fody" Version="16.2.6" />
+    <PackageReference Include="ReactiveUI.WPF" Version="16.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\AnimatedWait\AnimatedWait.csproj" />
   </ItemGroup>
 

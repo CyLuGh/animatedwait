@@ -12,8 +12,20 @@
     <Grid>
         <TabControl>
             <TabItem Header="Hourglass">
-                <animatedwait:HourglassIndeterminateProgress StrokeUpper="IndianRed"
-                                                             StrokeLower="OrangeRed" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <animatedwait:HourglassIndeterminateProgress x:Name="Hourglass"
+                                                                 StrokeUpper="IndianRed"
+                                                                 StrokeLower="OrangeRed"
+                                                                 Margin="50" />
+
+                    <CheckBox x:Name="CheckBoxHourglass"
+                              Content="Visible"
+                              Grid.Row="1" />
+                </Grid>
             </TabItem>
             <TabItem Header="Circular">
                 <animatedwait:CircularWorkIndicator FirstBrush="LawnGreen"
